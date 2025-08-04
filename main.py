@@ -6,11 +6,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from data_loader import DataLoader
 from feature_engineering import FeatureEngineer
-from model_salary import CareerPredictionModel
+from model import CareerPredictionModel
 import warnings
 import os
 warnings.filterwarnings('ignore')
-from handler import StudentPredictionAPI
 
 def main():
     """
@@ -231,4 +230,3 @@ def make_sample_predictions(model: CareerPredictionModel, X: pd.DataFrame, y: pd
 
 if __name__ == "__main__":
     main()
-

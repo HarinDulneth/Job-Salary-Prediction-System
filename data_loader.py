@@ -47,12 +47,12 @@ class DataLoader:
             filepath = os.path.join(self.data_directory, filename)
             try:
                 self.datasets[key] = pd.read_csv(filepath)
-                print(f" Loaded {filename}: {self.datasets[key].shape}")
+                print(f"[OK] Loaded {filename}: {self.datasets[key].shape}")
             except FileNotFoundError:
-                print(f" Warning: {filename} not found")
+                print(f"[WARN] {filename} not found")
                 self.datasets[key] = pd.DataFrame()
             except Exception as e:
-                print(f" Error loading {filename}: {str(e)}")
+                print(f"[ERROR] {filename}: {str(e)}")
                 self.datasets[key] = pd.DataFrame()
         
         return self.datasets
